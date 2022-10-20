@@ -1,7 +1,7 @@
 package config
 
 import (
-	doormanCfg "gitlab.com/tokene/doorman/connector/config"
+	doormanCfg "gitlab.com/tokend/nft-books/doorman/connector/config"
 
 	"gitlab.com/distributed_lab/kit/comfig"
 	"gitlab.com/distributed_lab/kit/copus"

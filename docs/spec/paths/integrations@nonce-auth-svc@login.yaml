@@ -26,6 +26,11 @@ post:
               data:
                 type: object
                 $ref: '#/components/schemas/JwtPair'
+              included:
+                type: array
+                items:
+                  anyOf:
+                  - $ref: '#/components/schemas/Jwt'
     '400':
       description: Bad Request
       content:

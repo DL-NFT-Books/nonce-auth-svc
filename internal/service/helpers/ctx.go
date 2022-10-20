@@ -4,12 +4,12 @@ import (
 	"context"
 	"net/http"
 
-	"gitlab.com/distributed_lab/logan/v3"
-	"gitlab.com/tokene/doorman/connector"
-	gosdk "gitlab.com/tokene/go-sdk"
-
 	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
 	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
+
+	"gitlab.com/distributed_lab/logan/v3"
+	"gitlab.com/tokend/nft-books/doorman/connector"
+	gosdk "gitlab.com/tokene/go-sdk"
 )
 
 type ctxKey int

@@ -7,57 +7,6 @@ servers:
   - url: 'https://api.demo.tokend.io'
     description: TokenD Developer Environment
 paths:
-  /integrations/nonce-auth-svc/admin-login:
-    post:
-      tags:
-        - Admin Authentication
-      summary: AdminLogin
-      description: 'Using signed nonce, get a jwt pair for login.'
-      operationId: adminlogin
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - data
-              properties:
-                data:
-                  type: object
-                  $ref: '#/components/schemas/AdminLogin'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: object
-                    $ref: '#/components/schemas/JwtPair'
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: object
-                required:
-                  - errors
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/LoginError'
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                type: object
-                $ref: '#/components/schemas/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/InternalError'
   /integrations/nonce-auth-svc/created-at:
     get:
       tags:
@@ -121,6 +70,67 @@ paths:
                   data:
                     type: object
                     $ref: '#/components/schemas/JwtPair'
+                  included:
+                    type: array
+                    items:
+                      anyOf:
+                        - $ref: '#/components/schemas/Jwt'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - errors
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/LoginError'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalError'
+  /integrations/nonce-auth-svc/login/admin:
+    post:
+      tags:
+        - Admin Authentication
+      summary: AdminLogin
+      description: 'Using signed nonce, get a jwt pair for login.'
+      operationId: adminlogin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - data
+              properties:
+                data:
+                  type: object
+                  $ref: '#/components/schemas/AdminLogin'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    $ref: '#/components/schemas/JwtPair'
+                  included:
+                    type: array
+                    items:
+                      anyOf:
+                        - $ref: '#/components/schemas/Jwt'
         '400':
           description: Bad Request
           content:
@@ -1953,20 +1963,26 @@ components:
         - $ref: '#/components/schemas/JwtPairKey'
         - type: object
           required:
-            - attributes
+            - relationships
           properties:
-            attributes:
+            relationships:
               type: object
               required:
+                - access_token
                 - refresh_token
-                - session_token
               properties:
+                access_token:
+                  type: object
+                  properties:
+                    data:
+                      type: object
+                      $ref: '#/components/schemas/JwtKey'
                 refresh_token:
                   type: object
-                  $ref: '#/components/schemas/Jwt'
-                session_token:
-                  type: object
-                  $ref: '#/components/schemas/Jwt'
+                  properties:
+                    data:
+                      type: object
+                      $ref: '#/components/schemas/JwtKey'
     JwtPairKey:
       type: object
       required:

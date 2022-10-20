@@ -3,12 +3,13 @@ package helpers
 import (
 	"net/http"
 
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/errors/apierrors"
+
 	"github.com/google/jsonapi"
 	"gitlab.com/distributed_lab/ape/problems"
 	"gitlab.com/distributed_lab/logan/v3/errors"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/errors/apierrors"
-	"gitlab.com/tokene/doorman/connector"
+	"gitlab.com/tokend/nft-books/doorman/connector"
 )
 
 func GetNonce(address string, r *http.Request) (*data.Nonce, *jsonapi.ErrorObject, error) {

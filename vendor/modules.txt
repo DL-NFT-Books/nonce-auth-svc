@@ -166,13 +166,17 @@ gitlab.com/distributed_lab/lorem
 # gitlab.com/distributed_lab/running v1.6.0
 ## explicit
 gitlab.com/distributed_lab/running
+# gitlab.com/distributed_lab/urlval v3.0.0+incompatible
+## explicit
+# gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1
+## explicit; go 1.18
+gitlab.com/tokend/nft-books/doorman/connector
+gitlab.com/tokend/nft-books/doorman/connector/config
+gitlab.com/tokend/nft-books/doorman/internal/config
+gitlab.com/tokend/nft-books/doorman/internal/service/helpers
+gitlab.com/tokend/nft-books/doorman/resources
 # gitlab.com/tokene/doorman v0.0.0-20220928142031-13ce24959a81
 ## explicit; go 1.18
-gitlab.com/tokene/doorman/connector
-gitlab.com/tokene/doorman/connector/config
-gitlab.com/tokene/doorman/internal/config
-gitlab.com/tokene/doorman/internal/service/helpers
-gitlab.com/tokene/doorman/resources
 # gitlab.com/tokene/go-sdk v0.1.1
 ## explicit; go 1.18
 gitlab.com/tokene/go-sdk
