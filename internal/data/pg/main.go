@@ -2,7 +2,7 @@ package pg
 
 import (
 	"gitlab.com/distributed_lab/kit/pgdb"
-	"gitlab.com/tokene/nonce-auth-svc/internal/data"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
 )
 
 func NewMasterQ(db *pgdb.DB) data.MasterQ {

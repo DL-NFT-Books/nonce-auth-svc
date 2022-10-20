@@ -1,4 +1,4 @@
-module gitlab.com/tokene/nonce-auth-svc
+module gitlab.com/tokend/nft-books/nonce-auth-svc
 
 go 1.18
 

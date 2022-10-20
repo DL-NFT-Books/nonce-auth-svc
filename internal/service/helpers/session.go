@@ -6,9 +6,9 @@ import (
 	"github.com/google/jsonapi"
 	"gitlab.com/distributed_lab/ape/problems"
 	"gitlab.com/distributed_lab/logan/v3/errors"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/errors/apierrors"
 	"gitlab.com/tokene/doorman/connector"
-	"gitlab.com/tokene/nonce-auth-svc/internal/data"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/errors/apierrors"
 )
 
 func GetNonce(address string, r *http.Request) (*data.Nonce, *jsonapi.ErrorObject, error) {

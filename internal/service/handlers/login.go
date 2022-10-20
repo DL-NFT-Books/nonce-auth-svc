@@ -5,9 +5,9 @@ import (
 
 	"gitlab.com/distributed_lab/ape"
 	"gitlab.com/distributed_lab/ape/problems"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/errors/apierrors"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/helpers"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/requests"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/errors/apierrors"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/helpers"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/requests"
 )
 
 func Login(w http.ResponseWriter, r *http.Request) {

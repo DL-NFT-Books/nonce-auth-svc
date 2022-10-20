@@ -1,12 +1,13 @@
 package config
 
 import (
+	doormanCfg "gitlab.com/tokene/doorman/connector/config"
+
 	"gitlab.com/distributed_lab/kit/comfig"
 	"gitlab.com/distributed_lab/kit/copus"
 	"gitlab.com/distributed_lab/kit/copus/types"
 	"gitlab.com/distributed_lab/kit/kv"
 	"gitlab.com/distributed_lab/kit/pgdb"
-	doormanCfg "gitlab.com/tokene/doorman/connector/config"
 )
 
 type Config interface {
@@ -16,6 +17,8 @@ type Config interface {
 	ServiceConfiger
 	comfig.Listenerer
 	doormanCfg.DoormanConfiger
+
+	AdminsConfig() AdminsConfig
 }
 
 type config struct {
@@ -26,6 +29,8 @@ type config struct {
 	getter kv.Getter
 	ServiceConfiger
 	doormanCfg.DoormanConfiger
+
+	admins comfig.Once
 }
 
 func New(getter kv.Getter) Config {

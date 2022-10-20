@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"gitlab.com/tokene/nonce-auth-svc/internal/cli"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/cli"
 )
 
 func main() {

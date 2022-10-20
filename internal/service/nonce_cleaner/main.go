@@ -4,12 +4,13 @@ import (
 	"context"
 	"time"
 
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data/pg"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/types"
+
 	"gitlab.com/distributed_lab/logan/v3"
 	"gitlab.com/distributed_lab/running"
-	"gitlab.com/tokene/nonce-auth-svc/internal/config"
-	"gitlab.com/tokene/nonce-auth-svc/internal/data"
-	"gitlab.com/tokene/nonce-auth-svc/internal/data/pg"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/types"
 )
 
 func NewNonceCleaner(cfg config.Config) types.Service {

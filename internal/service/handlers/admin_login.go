@@ -5,9 +5,10 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"gitlab.com/distributed_lab/ape"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/errors/apierrors"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/helpers"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/requests"
+
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/errors/apierrors"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/helpers"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/requests"
 )
 
 func AdminLogin(w http.ResponseWriter, r *http.Request) {

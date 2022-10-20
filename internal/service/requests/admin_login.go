@@ -5,10 +5,11 @@ import (
 	"net/http"
 	"strings"
 
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/util"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/resources"
+
 	validation "github.com/go-ozzo/ozzo-validation"
 	"gitlab.com/distributed_lab/logan/v3/errors"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/util"
-	"gitlab.com/tokene/nonce-auth-svc/resources"
 )
 
 type AdminLoginRequest struct {
@@ -22,9 +23,12 @@ func NewAdminLoginRequest(r *http.Request) (AdminLoginRequest, error) {
 	if err != nil {
 		return request, errors.Wrap(err, "failed to unmarshal")
 	}
+	
 	request.Data.Attributes.AuthPair.Address = strings.ToLower(request.Data.Attributes.AuthPair.Address)
+
 	return request, request.validate()
 }
+
 func (r *AdminLoginRequest) validate() error {
 	return validation.Errors{
 		"/data/type": validation.Validate(&r.Data.Type, validation.Required, validation.In(resources.ADMIN_LOGIN)),

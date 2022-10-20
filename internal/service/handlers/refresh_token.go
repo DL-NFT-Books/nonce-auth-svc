@@ -4,8 +4,9 @@ import (
 	"net/http"
 
 	"gitlab.com/distributed_lab/ape"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/errors/apierrors"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/helpers"
+
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/errors/apierrors"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/helpers"
 )
 
 func RefreshToken(w http.ResponseWriter, r *http.Request) {

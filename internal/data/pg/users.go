@@ -8,7 +8,7 @@ import (
 	"github.com/fatih/structs"
 	"gitlab.com/distributed_lab/kit/pgdb"
 	"gitlab.com/distributed_lab/logan/v3/errors"
-	"gitlab.com/tokene/nonce-auth-svc/internal/data"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
 )
 
 const usersTableName = "users"

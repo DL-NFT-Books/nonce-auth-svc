@@ -2,10 +2,10 @@ log:
   disable_sentry: true
 
 db:
-  url: postgres://...@.../...?sslmode=disabled
+  url: "postgres://auth:auth@localhost:23999/auth?sslmode=disable"
 
 listener:
-  addr: :8000
+  addr: :8098
 
 cop:
   disabled: true
@@ -15,7 +15,14 @@ cop:
   service_port: 80
 
 service:
-  token_expire_time: 1h or other value, see time.ParseDuration
-  token_key:  "something sha256'd, has to be a 64 char long hex string"
-  nonce_expire_time: 1m or other value, see time.ParseDuration
-  refresh_token_expire_time: 8hor other value, see time.ParseDuration
+  token_expire_time: 1h # or other value, see time.ParseDuration
+  token_key: e7583873da5ba09dacf9ec947931cbad03a56e74d950ae110ba2259b7601b13e # "something sha256'd, has to be a 64 char long hex string"
+  nonce_expire_time: 10m # or other value, see time.ParseDuration
+  refresh_token_expire_time: 8h # or other value, see time.ParseDuration
+
+doorman:
+  service_url: http://localhost:8054/integrations/doorman
+
+admins:
+  list: # Temporal solution. List of the admins will be taken from a contract in future version
+    - "0x409748DFB31cA1424d131663918C7a45F2eA6507"

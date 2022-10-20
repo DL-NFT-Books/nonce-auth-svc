@@ -3,8 +3,8 @@ package cli
 import (
 	migrate "github.com/rubenv/sql-migrate"
 	"gitlab.com/distributed_lab/logan/v3/errors"
-	"gitlab.com/tokene/nonce-auth-svc/internal/assets"
-	"gitlab.com/tokene/nonce-auth-svc/internal/config"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/assets"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
 )
 
 var migrations = &migrate.EmbedFileSystemMigrationSource{

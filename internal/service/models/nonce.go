@@ -1,6 +1,6 @@
 package models
 
-import "gitlab.com/tokene/nonce-auth-svc/resources"
+import "gitlab.com/tokend/nft-books/nonce-auth-svc/resources"
 
 func NewNonceModel(message string) resources.AuthNonceResponse {
 	response := resources.AuthNonceResponse{

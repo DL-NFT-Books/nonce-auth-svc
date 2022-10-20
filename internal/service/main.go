@@ -9,9 +9,9 @@ import (
 	"gitlab.com/distributed_lab/kit/copus/types"
 	"gitlab.com/distributed_lab/logan/v3"
 	"gitlab.com/distributed_lab/logan/v3/errors"
-	"gitlab.com/tokene/nonce-auth-svc/internal/config"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/nonce_cleaner"
-	serv "gitlab.com/tokene/nonce-auth-svc/internal/service/types"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/nonce_cleaner"
+	serv "gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/types"
 )
 
 type service struct {

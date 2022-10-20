@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/integrations/nonce-auth-svc/admin_login": {
+    "/integrations/nonce-auth-svc/admin-login": {
       "post": {
         "tags": [
           "Admin Authentication"
@@ -93,7 +93,7 @@
         }
       }
     },
-    "/integrations/nonce-auth-svc/created_at": {
+    "/integrations/nonce-auth-svc/created-at": {
       "get": {
         "tags": [
           "User Authentication"
@@ -299,7 +299,7 @@
         }
       }
     },
-    "/integrations/nonce-auth-svc/refresh_token": {
+    "/integrations/nonce-auth-svc/refresh-token": {
       "get": {
         "tags": [
           "User Authentication"

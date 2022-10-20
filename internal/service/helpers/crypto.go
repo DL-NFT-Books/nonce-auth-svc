@@ -6,8 +6,8 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
 	"gitlab.com/distributed_lab/logan/v3/errors"
-	"gitlab.com/tokene/nonce-auth-svc/internal/data"
-	"gitlab.com/tokene/nonce-auth-svc/internal/service/util"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
+	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/util"
 )
 
 func NonceToHash(nonce *data.Nonce) []byte {
