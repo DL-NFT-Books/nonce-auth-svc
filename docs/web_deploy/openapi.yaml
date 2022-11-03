@@ -283,6 +283,25 @@ paths:
           $ref: '#/components/responses/Conflict'
         '500':
           $ref: '#/components/responses/InternalError'
+  /integrations/nonce-auth-svc/validate:
+    get:
+      tags:
+        - User Authentication
+      summary: Validation
+      operationId: validate
+      description: Check if token is valid
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+            format: 'Bearer {token}'
+            example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+      responses:
+        '204':
+          description: Success
+        '400':
+          description: Bad Request
 components:
   schemas:
     AdminLogin:

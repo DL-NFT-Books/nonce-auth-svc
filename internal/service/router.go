@@ -32,6 +32,8 @@ func (s *service) router(cfg config.Config) chi.Router {
 		r.Get("/refresh-token", handlers.RefreshToken)
 		r.Get("/created-at", handlers.CreatedAt)
 
+		r.Get("/validate", handlers.Validate)
+
 		r.Route("/login", func(r chi.Router) {
 			//r.Post("/", handlers.Login)
 			r.Post("/admin", handlers.AdminLogin)
