@@ -20,8 +20,8 @@ service:
   nonce_expire_time: 10m # or other value, see time.ParseDuration
   refresh_token_expire_time: 8h # or other value, see time.ParseDuration
 
-doorman:
-  service_url: http://localhost:8054/integrations/doorman
+connector:
+  url: http://localhost:8054/integrations/
 
 admins:
   list: # Temporal solution. List of the admins will be taken from a contract in future version

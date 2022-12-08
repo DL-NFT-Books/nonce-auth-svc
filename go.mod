@@ -17,8 +17,8 @@ require (
 	gitlab.com/distributed_lab/kit v1.11.1
 	gitlab.com/distributed_lab/logan v3.8.1+incompatible
 	gitlab.com/distributed_lab/running v1.6.0
-	gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1
-	gitlab.com/tokene/go-sdk v0.1.1
+	gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1.0.20221202093129-30c17ef04208
+	gitlab.com/tokend/nft-books/go-sdk v0.1.2
 )
 
 require (
@@ -51,8 +51,6 @@ require (
 	github.com/spf13/viper v1.8.1 // indirect
 	github.com/subosito/gotenv v1.2.0 // indirect
 	gitlab.com/distributed_lab/lorem v0.2.0 // indirect
-	gitlab.com/distributed_lab/urlval v3.0.0+incompatible // indirect
-	gitlab.com/tokene/doorman v0.0.0-20220928142031-13ce24959a81 // indirect
 	golang.org/x/crypto v0.0.0-20210921155107-089bfa567519 // indirect
 	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
 	golang.org/x/text v0.3.7 // indirect
