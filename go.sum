@@ -466,8 +466,8 @@ gitlab.com/distributed_lab/lorem v0.2.0/go.mod h1:wkzrGoB1L/yUBu56SfoJ/vNiPqiHZc
 gitlab.com/distributed_lab/running v0.0.0-20200706131153-4af0e83eb96c/go.mod h1:4TnADX84dQjQMRHKIMPCVL0L97rD/Jxv0xDbrN6aKzk=
 gitlab.com/distributed_lab/running v1.6.0 h1:O2GQHgYkpNRDbobR11atOCH2rhS1okNKyadiAqi+kQI=
 gitlab.com/distributed_lab/running v1.6.0/go.mod h1:4TnADX84dQjQMRHKIMPCVL0L97rD/Jxv0xDbrN6aKzk=
-gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1.0.20221202093129-30c17ef04208 h1:e4jnCGIjpxx1deC+H9NkOh8hTjvmJ0wU8QpUKz/Z6Nc=
-gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1.0.20221202093129-30c17ef04208/go.mod h1:OP0gfs3KcgJcCAdEadNUT2pMxwBqgEq32bmX9HItFTs=
+gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1.0.20221208122624-848d4fe0422f h1:ddoLuVWHHPCUdMFbcszPNY2Na7wP8/IyqQx/o1upTjU=
+gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1.0.20221208122624-848d4fe0422f/go.mod h1:OP0gfs3KcgJcCAdEadNUT2pMxwBqgEq32bmX9HItFTs=
 gitlab.com/tokend/nft-books/go-sdk v0.1.2 h1:w0+cHanVfAW951iJ4cE/BGy/T/DlukBgf+O7QQjLXkc=
 gitlab.com/tokend/nft-books/go-sdk v0.1.2/go.mod h1:GtEYT+rHPUb5pT8+0PULSnkqkcksmOz7vlfqPxCwhas=
 go.etcd.io/etcd/api/v3 v3.5.0/go.mod h1:cbVKeC6lCfl7j/8jBhAK6aIYO9XOjdptoxU/nLQcPvs=
