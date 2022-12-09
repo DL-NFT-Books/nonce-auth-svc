@@ -166,20 +166,16 @@ gitlab.com/distributed_lab/lorem
 # gitlab.com/distributed_lab/running v1.6.0
 ## explicit
 gitlab.com/distributed_lab/running
-# gitlab.com/distributed_lab/urlval v3.0.0+incompatible
-## explicit
-# gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1
+# gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1.0.20221208122624-848d4fe0422f
 ## explicit; go 1.18
 gitlab.com/tokend/nft-books/doorman/connector
 gitlab.com/tokend/nft-books/doorman/connector/config
 gitlab.com/tokend/nft-books/doorman/internal/config
 gitlab.com/tokend/nft-books/doorman/internal/service/helpers
 gitlab.com/tokend/nft-books/doorman/resources
-# gitlab.com/tokene/doorman v0.0.0-20220928142031-13ce24959a81
+# gitlab.com/tokend/nft-books/go-sdk v0.1.2
 ## explicit; go 1.18
-# gitlab.com/tokene/go-sdk v0.1.1
-## explicit; go 1.18
-gitlab.com/tokene/go-sdk
+gitlab.com/tokend/nft-books/go-sdk
 # golang.org/x/crypto v0.0.0-20210921155107-089bfa567519
 ## explicit; go 1.17
 golang.org/x/crypto/sha3

@@ -3,7 +3,7 @@ package service
 import (
 	"github.com/go-chi/chi"
 	"gitlab.com/distributed_lab/ape"
-	gosdk "gitlab.com/tokene/go-sdk"
+	gosdk "gitlab.com/tokend/nft-books/go-sdk"
 
 	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
 	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data/pg"

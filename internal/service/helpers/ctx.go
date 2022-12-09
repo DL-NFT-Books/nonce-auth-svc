@@ -9,7 +9,7 @@ import (
 
 	"gitlab.com/distributed_lab/logan/v3"
 	"gitlab.com/tokend/nft-books/doorman/connector"
-	gosdk "gitlab.com/tokene/go-sdk"
+	gosdk "gitlab.com/tokend/nft-books/go-sdk"
 )
 
 type ctxKey int
