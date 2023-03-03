@@ -55,10 +55,6 @@ For services, we do use ***PostgresSQL*** database.
 You can [install it locally](https://www.postgresql.org/download/) or use [docker image](https://hub.docker.com/_/postgres/).
 
 
-### Third-party services
-- RPC and Websocket — [Alchemy](https://www.alchemy.com/) in this particular case.
-- IPFS Uploader Client — either [Pinata](https://www.pinata.cloud/) or [Infura](https://www.infura.io/). We recommend using former.  
-
 ## Contacts
 
 Dmytro Zakharov is responsible for this service. Can be contacted via the _Telegram_ (`@ZamDimon`)
