@@ -3,8 +3,6 @@ package service
 import (
 	"github.com/go-chi/chi"
 	"gitlab.com/distributed_lab/ape"
-	gosdk "gitlab.com/tokend/nft-books/go-sdk"
-
 	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
 	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data/pg"
 	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/handlers"
@@ -21,8 +19,8 @@ func (s *service) router(cfg config.Config) chi.Router {
 			helpers.CtxLog(s.log),
 			helpers.CtxDB(pg.NewMasterQ(cfg.DB())),
 			helpers.CtxServiceConfig(cfg.ServiceConfig()),
-			helpers.CtxNodeAdmins(gosdk.NewNodeAdminsMock(cfg.AdminsConfig().Admins...)), //TODO change when admin's smart contracts ready
 			helpers.CtxDoormanConnector(cfg.DoormanConnector()),
+			helpers.CtxNetworkConnector(*cfg.NetworkConnector()),
 		),
 	)
 

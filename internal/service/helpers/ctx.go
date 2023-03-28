@@ -7,9 +7,9 @@ import (
 	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
 	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
 
+	networkConnector "github.com/dl-nft-books/network-svc/connector"
 	"gitlab.com/distributed_lab/logan/v3"
-	"gitlab.com/tokend/nft-books/doorman/connector"
-	gosdk "gitlab.com/tokend/nft-books/go-sdk"
+	doormanConnector "gitlab.com/tokend/nft-books/doorman/connector"
 )
 
 type ctxKey int
@@ -17,9 +17,9 @@ type ctxKey int
 const (
 	logCtxKey ctxKey = iota
 	dbCtxKey
-	nodeAdminsCtxKey
 	serviceConfigCtxKey
 	doormanConnectorCtxKey
+	networkConnectorCtxKey
 )
 
 func CtxLog(entry *logan.Entry) func(context.Context) context.Context {
@@ -44,22 +44,23 @@ func CtxServiceConfig(entry *config.ServiceConfig) func(context.Context) context
 		return context.WithValue(ctx, serviceConfigCtxKey, entry)
 	}
 }
-func CtxNodeAdmins(entry gosdk.NodeAdminsI) func(context.Context) context.Context {
-	return func(ctx context.Context) context.Context {
-		return context.WithValue(ctx, nodeAdminsCtxKey, entry)
-	}
-}
-func NodeAdmins(r *http.Request) gosdk.NodeAdminsI {
-	return r.Context().Value(nodeAdminsCtxKey).(gosdk.NodeAdminsI)
-}
 func ServiceConfig(r *http.Request) *config.ServiceConfig {
 	return r.Context().Value(serviceConfigCtxKey).(*config.ServiceConfig)
 }
-func CtxDoormanConnector(entry connector.ConnectorI) func(context.Context) context.Context {
+func CtxDoormanConnector(entry doormanConnector.ConnectorI) func(context.Context) context.Context {
 	return func(ctx context.Context) context.Context {
 		return context.WithValue(ctx, doormanConnectorCtxKey, entry)
 	}
 }
-func DoormanConnector(r *http.Request) connector.ConnectorI {
-	return r.Context().Value(doormanConnectorCtxKey).(connector.ConnectorI)
+func DoormanConnector(r *http.Request) doormanConnector.ConnectorI {
+	return r.Context().Value(doormanConnectorCtxKey).(doormanConnector.ConnectorI)
+}
+
+func CtxNetworkConnector(entry networkConnector.Connector) func(context.Context) context.Context {
+	return func(ctx context.Context) context.Context {
+		return context.WithValue(ctx, networkConnectorCtxKey, entry)
+	}
+}
+func NetworkConnector(r *http.Request) networkConnector.Connector {
+	return r.Context().Value(networkConnectorCtxKey).(networkConnector.Connector)
 }
