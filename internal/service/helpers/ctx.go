@@ -4,12 +4,12 @@ import (
 	"context"
 	"net/http"
 
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/config"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/data"
 
 	networkConnector "github.com/dl-nft-books/network-svc/connector"
 	"gitlab.com/distributed_lab/logan/v3"
-	doormanConnector "gitlab.com/tokend/nft-books/doorman/connector"
+	doormanConnector "github.com/dl-nft-books/doorman/connector"
 )
 
 type ctxKey int

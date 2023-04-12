@@ -3,10 +3,10 @@ package service
 import (
 	"github.com/go-chi/chi"
 	"gitlab.com/distributed_lab/ape"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data/pg"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/handlers"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/helpers"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/config"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/data/pg"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/handlers"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/helpers"
 )
 
 func (s *service) router(cfg config.Config) chi.Router {

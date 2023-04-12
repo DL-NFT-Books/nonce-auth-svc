@@ -34,6 +34,16 @@ github.com/decred/dcrd/dcrec/secp256k1/v4/ecdsa
 # github.com/dgrijalva/jwt-go v3.2.0+incompatible
 ## explicit
 github.com/dgrijalva/jwt-go
+# github.com/dl-nft-books/doorman v0.1.0-rc.1.0.20230329143604-2590a5e15d38
+## explicit; go 1.18
+github.com/dl-nft-books/doorman/connector
+github.com/dl-nft-books/doorman/connector/config
+github.com/dl-nft-books/doorman/internal/config
+github.com/dl-nft-books/doorman/internal/service/helpers
+github.com/dl-nft-books/doorman/resources
+# github.com/dl-nft-books/go-sdk v0.1.3-0.20230331084129-b9f80e55d69f
+## explicit; go 1.18
+github.com/dl-nft-books/go-sdk
 # github.com/dl-nft-books/network-svc v0.0.0-20230321151754-59c7039f7309
 ## explicit; go 1.18
 github.com/dl-nft-books/network-svc/connector
@@ -223,16 +233,6 @@ gitlab.com/distributed_lab/lorem
 # gitlab.com/distributed_lab/running v1.6.0
 ## explicit
 gitlab.com/distributed_lab/running
-# gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1.0.20221208122624-848d4fe0422f
-## explicit; go 1.18
-gitlab.com/tokend/nft-books/doorman/connector
-gitlab.com/tokend/nft-books/doorman/connector/config
-gitlab.com/tokend/nft-books/doorman/internal/config
-gitlab.com/tokend/nft-books/doorman/internal/service/helpers
-gitlab.com/tokend/nft-books/doorman/resources
-# gitlab.com/tokend/nft-books/go-sdk v0.1.2
-## explicit; go 1.18
-gitlab.com/tokend/nft-books/go-sdk
 # golang.org/x/crypto v0.1.0
 ## explicit; go 1.17
 golang.org/x/crypto/pbkdf2

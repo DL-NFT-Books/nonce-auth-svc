@@ -1,7 +1,7 @@
 package config
 
 import (
-	doormanCfg "gitlab.com/tokend/nft-books/doorman/connector/config"
+	doormanCfg "github.com/dl-nft-books/doorman/connector/config"
 
 	networker "github.com/dl-nft-books/network-svc/connector"
 	"gitlab.com/distributed_lab/kit/comfig"

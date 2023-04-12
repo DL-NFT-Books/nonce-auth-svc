@@ -1,4 +1,4 @@
-module gitlab.com/tokend/nft-books/nonce-auth-svc
+module github.com/dl-nft-books/nonce-auth-svc
 
 go 1.18
 
@@ -6,6 +6,7 @@ require (
 	github.com/LarryBattle/nonce-golang v0.0.0-20150303194802-a7d5615a19fd
 	github.com/Masterminds/squirrel v1.5.3
 	github.com/alecthomas/kingpin v2.2.6+incompatible
+	github.com/dl-nft-books/doorman v0.1.0-rc.1.0.20230329143604-2590a5e15d38
 	github.com/dl-nft-books/network-svc v0.0.0-20230321151754-59c7039f7309
 	github.com/ethereum/go-ethereum v1.10.26
 	github.com/fatih/structs v1.1.0
@@ -18,7 +19,6 @@ require (
 	gitlab.com/distributed_lab/kit v1.11.1
 	gitlab.com/distributed_lab/logan v3.8.1+incompatible
 	gitlab.com/distributed_lab/running v1.6.0
-	gitlab.com/tokend/nft-books/doorman v0.1.0-rc.1.0.20221208122624-848d4fe0422f
 )
 
 require (
@@ -30,6 +30,7 @@ require (
 	github.com/deckarep/golang-set v1.8.0 // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
+	github.com/dl-nft-books/go-sdk v0.1.3-0.20230331084129-b9f80e55d69f // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/getsentry/raven-go v0.2.0 // indirect
 	github.com/getsentry/sentry-go v0.18.0 // indirect
@@ -61,7 +62,6 @@ require (
 	github.com/tklauser/go-sysconf v0.3.5 // indirect
 	github.com/tklauser/numcpus v0.2.2 // indirect
 	gitlab.com/distributed_lab/lorem v0.2.0 // indirect
-	gitlab.com/tokend/nft-books/go-sdk v0.1.2 // indirect
 	golang.org/x/crypto v0.1.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect
 	golang.org/x/text v0.7.0 // indirect

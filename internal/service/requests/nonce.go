@@ -7,8 +7,8 @@ import (
 
 	validation "github.com/go-ozzo/ozzo-validation"
 	"gitlab.com/distributed_lab/logan/v3/errors"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/util"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/resources"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/util"
+	"github.com/dl-nft-books/nonce-auth-svc/resources"
 )
 
 type NonceRequest struct {

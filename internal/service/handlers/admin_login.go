@@ -1,16 +1,16 @@
 package handlers
 
 import (
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/solidity/generated/contractsregistry"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/solidity/generated/rolemanager"
+	"github.com/dl-nft-books/nonce-auth-svc/solidity/generated/contractsregistry"
+	"github.com/dl-nft-books/nonce-auth-svc/solidity/generated/rolemanager"
 	"net/http"
 
 	"github.com/ethereum/go-ethereum/common"
 	"gitlab.com/distributed_lab/ape"
 
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/errors/apierrors"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/helpers"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/requests"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/errors/apierrors"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/helpers"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/requests"
 )
 
 func AdminLogin(w http.ResponseWriter, r *http.Request) {
