@@ -1,12 +1,12 @@
 package service
 
 import (
-	"github.com/go-chi/chi"
-	"gitlab.com/distributed_lab/ape"
 	"github.com/dl-nft-books/nonce-auth-svc/internal/config"
 	"github.com/dl-nft-books/nonce-auth-svc/internal/data/pg"
 	"github.com/dl-nft-books/nonce-auth-svc/internal/service/handlers"
 	"github.com/dl-nft-books/nonce-auth-svc/internal/service/helpers"
+	"github.com/go-chi/chi"
+	"gitlab.com/distributed_lab/ape"
 )
 
 func (s *service) router(cfg config.Config) chi.Router {
@@ -35,6 +35,16 @@ func (s *service) router(cfg config.Config) chi.Router {
 		r.Route("/login", func(r chi.Router) {
 			//r.Post("/", handlers.Login)
 			r.Post("/admin", handlers.AdminLogin)
+		})
+
+		r.Route("/users", func(r chi.Router) {
+			r.Post("/", handlers.CreateUser)
+			r.Get("/", handlers.GetListUsers)
+			r.Route("/{address}", func(r chi.Router) {
+				r.Patch("/", handlers.UpdateUserByAddress)
+				r.Get("/", handlers.GetUserByAddress)
+				r.Delete("/", handlers.DeleteUserByAddress)
+			})
 		})
 	})
 

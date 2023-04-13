@@ -2,23 +2,15 @@ allOf:
   - $ref: "#/components/schemas/JwtPairKey"
   - type: object
     required:
-      - relationships
+      - attributes
     properties:
-      relationships:
+      attributes:
         type: object
         required:
-          - access_token
+          - session_token
           - refresh_token
         properties:
-          access_token:
-            type: object
-            properties:
-              data:
-                type: object
-                $ref: '#/components/schemas/JwtKey'
+          session_token:
+            $ref: '#/components/schemas/Jwt'
           refresh_token:
-            type: object
-            properties:
-              data:
-                type: object
-                $ref: '#/components/schemas/JwtKey'
+            $ref: '#/components/schemas/Jwt'

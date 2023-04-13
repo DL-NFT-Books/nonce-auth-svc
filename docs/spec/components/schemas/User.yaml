@@ -1,0 +1,26 @@
+allOf:
+  - $ref: '#/components/schemas/UserKey'
+  - type: object
+    required:
+      - attributes
+    properties:
+      attributes:
+        type: object
+        required:
+          - name
+          - address
+          - created_at
+        properties:
+          name:
+            type: string
+            description: Name of manager
+            example: 'John Smith'
+          address:
+            type: string
+            description: Address of manager
+            example: '0x123...'
+          created_at:
+            type: string
+            format: time.Time
+            description: User entry time
+            example: '2022-11-03T21:36:21.022589Z'

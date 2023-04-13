@@ -4,7 +4,9 @@
 
 package resources
 
+import "time"
+
 type CreatedAtAttributes struct {
-	Address   string `json:"address"`
-	CreatedAt int64  `json:"created_at"`
+	Address   string    `json:"address"`
+	CreatedAt time.Time `json:"created_at"`
 }
