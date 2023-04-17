@@ -13,7 +13,7 @@ import (
 func GetListUsers(w http.ResponseWriter, r *http.Request) {
 	request, err := requests.NewGetListUsersRequest(r)
 	if err != nil {
-		helpers.Log(r).WithError(err).Error("failed to fetch user by id request")
+		helpers.Log(r).WithError(err).Error("failed to fetch user list request")
 		ape.RenderErr(w, problems.BadRequest(err)...)
 		return
 	}
