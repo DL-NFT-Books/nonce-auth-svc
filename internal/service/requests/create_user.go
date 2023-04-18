@@ -1,10 +1,10 @@
 package requests
 
 import (
+	"encoding/json"
 	"github.com/dl-nft-books/nonce-auth-svc/resources"
 	validation "github.com/go-ozzo/ozzo-validation"
 	"gitlab.com/distributed_lab/logan/v3/errors"
-	"gitlab.com/distributed_lab/urlval"
 	"net/http"
 )
 
@@ -15,7 +15,7 @@ type CreateUserRequest struct {
 func NewCreateUserRequest(r *http.Request) (*CreateUserRequest, error) {
 	var request CreateUserRequest
 
-	if err := urlval.Decode(r.URL.Query(), &request); err != nil {
+	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
 		return nil, errors.Wrap(err, "failed to unmarshal create user request")
 	}
 	return &request, request.validate()
