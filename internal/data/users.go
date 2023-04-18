@@ -24,5 +24,5 @@ type User struct {
 	ID        int64     `db:"id" structs:"-"`
 	Name      string    `db:"name" structs:"name"`
 	Address   string    `db:"address" structs:"address"`
-	CreatedAt time.Time `db:"createdat" structs:"createdat"`
+	CreatedAt time.Time `db:"created_at" structs:"created_at"`
 }
