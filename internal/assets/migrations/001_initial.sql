@@ -3,7 +3,7 @@
 create table users (
     id bigserial primary key,
     name text not null default '',
-    address Bytea UNIQUE,
+    address text UNIQUE,
     created_at timestamp not null default CURRENT_TIMESTAMP
 );
 
