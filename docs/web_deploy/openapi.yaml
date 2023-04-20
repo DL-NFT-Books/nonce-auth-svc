@@ -413,8 +413,8 @@ components:
                 address:
                   type: string
                 created_at:
-                  type: integer
-                  format: int64
+                  type: string
+                  format: time.Time
                   example: '1321053071'
     CreatedAtKey:
       type: object
@@ -425,6 +425,37 @@ components:
           type: string
           enum:
             - created_at
+    CreateUser:
+      allOf:
+        - $ref: '#/components/schemas/CreateUserKey'
+        - type: object
+          x-go-is-request: true
+          required:
+            - attributes
+          properties:
+            attributes:
+              type: object
+              required:
+                - name
+                - address
+              properties:
+                name:
+                  type: string
+                  description: Name of manager
+                  example: John Smith
+                address:
+                  type: string
+                  description: Address of manager
+                  example: 0x123...
+    CreateUserKey:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum:
+            - create-user
     BadRequestError:
       type: object
       required:
@@ -1982,26 +2013,18 @@ components:
         - $ref: '#/components/schemas/JwtPairKey'
         - type: object
           required:
-            - relationships
+            - attributes
           properties:
-            relationships:
+            attributes:
               type: object
               required:
-                - access_token
+                - session_token
                 - refresh_token
               properties:
-                access_token:
-                  type: object
-                  properties:
-                    data:
-                      type: object
-                      $ref: '#/components/schemas/JwtKey'
+                session_token:
+                  $ref: '#/components/schemas/Jwt'
                 refresh_token:
-                  type: object
-                  properties:
-                    data:
-                      type: object
-                      $ref: '#/components/schemas/JwtKey'
+                  $ref: '#/components/schemas/Jwt'
     JwtPairKey:
       type: object
       required:
@@ -2057,6 +2080,68 @@ components:
           type: string
           enum:
             - register
+    UpdateUser:
+      allOf:
+        - $ref: '#/components/schemas/CreateUserKey'
+        - type: object
+          x-go-is-request: true
+          required:
+            - attributes
+          properties:
+            attributes:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: Name of manager
+                  example: John Smith
+    UpdateUserKey:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum:
+            - update-user
+    User:
+      allOf:
+        - $ref: '#/components/schemas/UserKey'
+        - type: object
+          required:
+            - attributes
+          properties:
+            attributes:
+              type: object
+              required:
+                - name
+                - address
+                - created_at
+              properties:
+                name:
+                  type: string
+                  description: Name of manager
+                  example: John Smith
+                address:
+                  type: string
+                  description: Address of manager
+                  example: 0x123...
+                created_at:
+                  type: string
+                  format: time.Time
+                  description: User entry time
+                  example: '2022-11-03T21:36:21.022589Z'
+    UserKey:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum:
+            - user
   responses:
     BadRequest:
       description: Bad Request

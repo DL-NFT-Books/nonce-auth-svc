@@ -1,0 +1,41 @@
+configVersion: 1
+project: "backend"
+---
+image: builder
+from: golang:1.18-alpine
+docker:
+  WORKDIR: /go/src/nonce-auth-svc
+git:
+  - add: /
+    to: /go/src/nonce-auth-svc
+    stageDependencies:
+      install:
+        - go.mod
+      setup:
+        - "**/*"
+shell:
+  install:
+    - apk add git build-base
+    - git config --global url."https://{{  env "CI_JOB_TOKEN" }}@github.com/".insteadOf https://github.com/
+    - go env -w GOPRIVATE=github.com/*
+  setup:
+    - export CGO_ENABLED=1
+    - export GO111MODULE=on
+    - export GOOS=linux
+    - cd /go/src/nonce-auth-svc
+    - go mod tidy
+    - go mod vendor
+    - go build  -o /usr/local/bin/nonce-auth-svc  /go/src/nonce-auth-svc
+---
+image: service 
+from: alpine:3.9
+docker:
+  ENTRYPOINT: nonce-auth-svc
+shell:
+  setup:
+    - apk add --no-cache ca-certificates
+import:
+  - image: builder
+    add: /usr/local/bin/nonce-auth-svc
+    to: /usr/local/bin/nonce-auth-svc
+    after: setup

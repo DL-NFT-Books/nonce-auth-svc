@@ -2,8 +2,9 @@
 
 create table users (
     id bigserial primary key,
-    address Bytea,
-    createdat bigint not null
+    name text not null default '',
+    address text UNIQUE,
+    created_at timestamp not null default CURRENT_TIMESTAMP
 );
 
 create table nonce (

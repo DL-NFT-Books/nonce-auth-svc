@@ -3,9 +3,9 @@ package handlers
 import (
 	"errors"
 	"gitlab.com/distributed_lab/ape"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/errors/apierrors"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/helpers"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/resources"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/errors/apierrors"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/helpers"
+	"github.com/dl-nft-books/nonce-auth-svc/resources"
 	"net/http"
 )
 

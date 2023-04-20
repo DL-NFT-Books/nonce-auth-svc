@@ -1,0 +1,16 @@
+allOf:
+  - $ref: '#/components/schemas/CreateUserKey'
+  - type: object
+    x-go-is-request: true
+    required:
+      - attributes
+    properties:
+      attributes:
+        type: object
+        required:
+          - name
+        properties:
+          name:
+            type: string
+            description: Name of manager
+            example: 'John Smith'

@@ -8,7 +8,7 @@ import (
 	"gitlab.com/distributed_lab/ape"
 	"gitlab.com/distributed_lab/ape/problems"
 
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/helpers"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/helpers"
 )
 
 func Validate(w http.ResponseWriter, r *http.Request) {

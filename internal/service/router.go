@@ -1,14 +1,12 @@
 package service
 
 import (
+	"github.com/dl-nft-books/nonce-auth-svc/internal/config"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/data/pg"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/handlers"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/helpers"
 	"github.com/go-chi/chi"
 	"gitlab.com/distributed_lab/ape"
-	gosdk "gitlab.com/tokend/nft-books/go-sdk"
-
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data/pg"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/handlers"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/helpers"
 )
 
 func (s *service) router(cfg config.Config) chi.Router {
@@ -21,8 +19,8 @@ func (s *service) router(cfg config.Config) chi.Router {
 			helpers.CtxLog(s.log),
 			helpers.CtxDB(pg.NewMasterQ(cfg.DB())),
 			helpers.CtxServiceConfig(cfg.ServiceConfig()),
-			helpers.CtxNodeAdmins(gosdk.NewNodeAdminsMock(cfg.AdminsConfig().Admins...)), //TODO change when admin's smart contracts ready
 			helpers.CtxDoormanConnector(cfg.DoormanConnector()),
+			helpers.CtxNetworkConnector(*cfg.NetworkConnector()),
 		),
 	)
 
@@ -37,6 +35,16 @@ func (s *service) router(cfg config.Config) chi.Router {
 		r.Route("/login", func(r chi.Router) {
 			//r.Post("/", handlers.Login)
 			r.Post("/admin", handlers.AdminLogin)
+		})
+
+		r.Route("/users", func(r chi.Router) {
+			r.Post("/", handlers.CreateUser)
+			r.Get("/", handlers.GetListUsers)
+			r.Route("/{address}", func(r chi.Router) {
+				r.Patch("/", handlers.UpdateUserByAddress)
+				r.Get("/", handlers.GetUserByAddress)
+				r.Delete("/", handlers.DeleteUserByAddress)
+			})
 		})
 	})
 

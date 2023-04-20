@@ -4,11 +4,11 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/dl-nft-books/nonce-auth-svc/internal/data"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/errors/apierrors"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/helpers"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/requests"
 	"gitlab.com/distributed_lab/ape"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/errors/apierrors"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/helpers"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/requests"
 )
 
 func Register(w http.ResponseWriter, r *http.Request) {
@@ -52,7 +52,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	_, err = db.Users().Insert(data.User{Address: ethAddress, CreatedAt: time.Now().Unix()})
+	_, err = db.Users().Insert(data.User{Address: ethAddress, CreatedAt: time.Now()})
 	if err != nil {
 		logger.WithError(err).Error("failed to query db")
 		ape.RenderErr(w, apierrors.InternalError(err))

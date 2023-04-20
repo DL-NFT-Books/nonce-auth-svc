@@ -4,10 +4,10 @@ import (
 	"context"
 	"time"
 
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/config"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/data/pg"
-	"gitlab.com/tokend/nft-books/nonce-auth-svc/internal/service/types"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/config"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/data"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/data/pg"
+	"github.com/dl-nft-books/nonce-auth-svc/internal/service/types"
 
 	"gitlab.com/distributed_lab/logan/v3"
 	"gitlab.com/distributed_lab/running"

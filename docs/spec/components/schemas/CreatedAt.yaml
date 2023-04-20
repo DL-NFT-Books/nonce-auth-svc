@@ -13,6 +13,6 @@ allOf:
           address:
             type: string
           created_at:
-            type: integer
-            format: int64
+            type: string
+            format: time.Time
             example: "1321053071"
